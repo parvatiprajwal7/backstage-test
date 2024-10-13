@@ -9,7 +9,7 @@ metadata:
 spec:
   type: website
   lifecycle: production
-  owner: artist-relations-team
+  owner: Prajwal
   system: artist-engagement-portal
   dependsOn:
     - resource:default/artists-db
