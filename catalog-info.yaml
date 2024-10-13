@@ -9,7 +9,7 @@ spec:
     displayName: Helm
     email: team-b@example.com
     picture: https://api.dicebear.com/7.x/identicon/svg?seed=Abby&backgroundType=solid,gradientLinear&backgroundColor=ffd5dc,b6e3f4
-  parent: [Automation,Develpoment]
+  parent: Automation,Develpoment
   children: []
 ---
 apiVersion: backstage.io/v1alpha1
