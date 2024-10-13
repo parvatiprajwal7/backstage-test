@@ -1,14 +1,24 @@
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
-  name: Prajwal
-  description: The infra business unit
+  name: Automation
+  description: This team is to work on automation
 spec:
   type: team
   profile:
+    displayName: Automation Team
+    email: team-b@example.com
+    picture: https://api.dicebear.com/7.x/identicon/svg?seed=Abby&backgroundType=solid,gradientLinear&backgroundColor=ffd5dc,b6e3f4
+  parent: Automation
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: Prajwal
+spec:
+  profile:
     displayName: Prajwal
-    email: infrastructure@example.com
-    picture: https://example.com/groups/bu-infrastructure.jpeg
-  parent: ops
-  children: [backstage, other]
-  members: [jdoe]
+    email: Prajwal@example.com
+    picture: https://api.dicebear.com/7.x/avataaars/svg?seed=Gizmo&backgroundColor=transparent
+  memberOf: [Automation]
