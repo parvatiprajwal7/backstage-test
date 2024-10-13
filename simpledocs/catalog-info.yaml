@@ -1,16 +1,16 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: artist-web
+  name: Automation 
   description: The place to be, for great artists
   annotations:
     backstage.io/techdocs-ref: dir:.
     github.com/project-slug: grafana/grafana
 spec:
-  type: website
+  type: Framework
   lifecycle: production
   owner: Prajwal
-  system: artist-engagement-portal
+  system: Automation-Framework
   dependsOn:
     - resource:default/artists-db
   dependencyOf:
