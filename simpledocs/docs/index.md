@@ -11,6 +11,3 @@ This is the Helm chart for deploying **[Your Application Name]**.
 
 To install the chart with the release name `my-release`:
 
-```bash
-helm repo add [repo-name] [repo-url]
-helm install my-release [repo-name]/[chart-name]
