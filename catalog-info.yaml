@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
-  name: Helm Chart
+  name: Helm-Chart
   description: This Work on helm chart development and Automation
 spec:
   type: team
@@ -24,7 +24,7 @@ spec:
     email: team-b@example.com
     picture: https://api.dicebear.com/7.x/identicon/svg?seed=Abby&backgroundType=solid,gradientLinear&backgroundColor=ffd5dc,b6e3f4
   parent: Automation
-  children: [Helm Chart]
+  children: [Helm-Chart]
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Group
@@ -38,7 +38,7 @@ spec:
     email: team-b@example.com
     picture: https://api.dicebear.com/7.x/identicon/svg?seed=Abby&backgroundType=solid,gradientLinear&backgroundColor=ffd5dc,b6e3f4
   parent: Develpoment
-  children: [Helm Chart]
+  children: [Helm-Chart]
 ---
 apiVersion: backstage.io/v1alpha1
 kind: User
