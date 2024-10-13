@@ -1,6 +1,20 @@
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
+  name: Helm Chart
+  description: This Work on helm chart development and Automation
+spec:
+  type: team
+  profile:
+    displayName: Helm Chart
+    email: team-b@example.com
+    picture: https://api.dicebear.com/7.x/identicon/svg?seed=Abby&backgroundType=solid,gradientLinear&backgroundColor=ffd5dc,b6e3f4
+  parent: [Automation,Develpoment]
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
   name: Automation
   description: This team is to work on automation
 spec:
@@ -10,7 +24,21 @@ spec:
     email: team-b@example.com
     picture: https://api.dicebear.com/7.x/identicon/svg?seed=Abby&backgroundType=solid,gradientLinear&backgroundColor=ffd5dc,b6e3f4
   parent: Automation
-  children: []
+  children: [Helm Chart]
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: Develpoment
+  description: This team is to work on Development
+spec:
+  type: team
+  profile:
+    displayName: Development team
+    email: team-b@example.com
+    picture: https://api.dicebear.com/7.x/identicon/svg?seed=Abby&backgroundType=solid,gradientLinear&backgroundColor=ffd5dc,b6e3f4
+  parent: Develpoment
+  children: [Helm Chart]
 ---
 apiVersion: backstage.io/v1alpha1
 kind: User
@@ -21,4 +49,26 @@ spec:
     displayName: Prajwal
     email: Prajwal@example.com
     picture: https://api.dicebear.com/7.x/avataaars/svg?seed=Gizmo&backgroundColor=transparent
+  memberOf: [Automation,Develpoment]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: ABC
+spec:
+  profile:
+    displayName: ABC
+    email: ABC@example.com
+    picture: https://api.dicebear.com/7.x/avataaars/svg?seed=Gizmo&backgroundColor=transparent
   memberOf: [Automation]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: ABC2
+spec:
+  profile:
+    displayName: ABC2
+    email: ABC2@example.com
+    picture: https://api.dicebear.com/7.x/avataaars/svg?seed=Gizmo&backgroundColor=transparent
+  memberOf: [Develpoment]
