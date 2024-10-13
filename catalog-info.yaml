@@ -1,30 +1,73 @@
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: Group
 metadata:
-    name: Chart docs
-    description: This containthe docs for charts
-    annotations:
-        backstage.io/techdocs-ref: dir:.
-    tags:
-        - yaml
-        - helm
-    links:
-        - url: https://admin.example-org.com
-          title: Admin Dashboard
-          icon: dashboard
-          type: admin-dashboard
+  name: team-a
+  description: Team A
 spec:
-    type: service
-    lifecycle: production
-    owner: prajwal
-    system: project-x
-
+  type: team
+  profile:
+    # Intentional no displayName for testing
+    email: team-a@example.com
+    picture: https://api.dicebear.com/7.x/identicon/svg?seed=Fluffy&backgroundType=solid,gradientLinear&backgroundColor=ffd5dc,b6e3f4
+  parent: backstage
+  children: []
 ---
 apiVersion: backstage.io/v1alpha1
-kind: System
+kind: User
 metadata:
-    name: project-x
-    description: Handy tools to keep artists in the loop
+  name: breanna.davison
 spec:
-    owner: artist-relations-team
-    domain: artists
+  profile:
+    # Intentional no displayName for testing
+    email: breanna-davison@example.com
+    picture: https://api.dicebear.com/7.x/avataaars/svg?seed=Luna&backgroundColor=transparent
+  memberOf: [team-a]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: janelle.dawe
+spec:
+  profile:
+    displayName: Janelle Dawe
+    email: janelle-dawe@example.com
+    picture: https://api.dicebear.com/7.x/avataaars/svg?seed=Leo&backgroundColor=transparent
+  memberOf: [team-a]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: nigel.manning
+spec:
+  profile:
+    displayName: Nigel Manning
+    email: nigel-manning@example.com
+    picture: https://api.dicebear.com/7.x/avataaars/svg?seed=Midnight&backgroundColor=transparent
+  memberOf: [team-a]
+---
+# This user is added as an example, to make it more easy for the "Guest"
+# sign-in option to demonstrate some entities being owned. In a regular org,
+# a guest user would probably not be registered like this.
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: guest
+spec:
+  profile:
+    displayName: Guest User
+    email: guest@example.com
+  memberOf: [team-a]
+---
+# This user is added as an example, to make it more easy for the "Guest"
+# sign-in option to demonstrate some entities being owned. In a regular org,
+# a guest user would probably not be registered like this.
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: guest
+  namespace: development
+spec:
+  profile:
+    displayName: Guest User
+    email: guest@example.com
+  memberOf: [group:default/team-a]
